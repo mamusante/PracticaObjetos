@@ -1,0 +1,13 @@
+import filosofo.*
+
+describe "probando un filosofo" {
+
+  method initialize(){
+  } 
+  test "nombre de diogenes" {
+    const diogenes = new Filosofo(nombre = "diogenes" , honorificos = ["el sabio"], nivelDeIluminacion = 12)
+
+    diogenes.presentarse()
+  }
+
+}
