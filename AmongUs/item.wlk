@@ -9,5 +9,7 @@ object escoba {
 }
 
 object bolsaDeConsorcio {
-    
+
 }
+
+object tuboDeOxigeno {}
