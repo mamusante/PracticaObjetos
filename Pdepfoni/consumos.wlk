@@ -3,6 +3,8 @@ class Consumo {
     const fechaConsumo
     method costo()
 
+    method fechaConsumo() = fechaConsumo
+    
     method fechaEntre(fechaInicial , fechaFinal){
         fechaConsumo.between(fechaInicial, fechaFinal)
     }
@@ -15,6 +17,8 @@ class ConsumoDeInternet inherits Consumo{
 
     method seSatisfacePorInternet(mbdisponibles) = cantidadMBConsumidos <= mbdisponibles
 
+    method seSatisfacePorSegundos() = false
+
 
     method cantidadMBConsumidos() = cantidadMBConsumidos
 }
@@ -22,7 +26,9 @@ class ConsumoDeInternet inherits Consumo{
 class ConsumoDeLlamadas inherits Consumo{
     const cantidadSegundosConsumidos
 
-    method seSatisfacePorSegundos()
+    method seSatisfacePorSegundos() = true
+
+    method seSatisfacePorInternet(mbdisponibles) = false
 
     override method costo() = pdepfoni.precioFijo() + self.segundosACobrar() * pdepfoni.precioPorSegundo()
 
